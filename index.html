@@ -1,0 +1,400 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khan Capital Management (KCM) — Trade Live With Us on Telegram</title>
+  <meta name="description" content="Join Khan Capital Management's live Telegram community for Quotex binary options strategy breakdowns, live trade entries, and direct access to the KCM team. Free to join." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --obsidian:    #0A0C0F;
+      --deep-navy:   #0D1B2A;
+      --kcm-gold:    #C9A84C;
+      --gold-glow:   #E8C96B;
+      --gold-pale:   #F5E6B8;
+      --bone-white:  #F2EDE4;
+      --smoke:       #6B7280;
+      --glass-bg:    rgba(13,27,42,0.70);
+      --glass-border:rgba(201,168,76,0.25);
+      --radius-sm:   6px;
+      --radius-md:   12px;
+      --radius-lg:   20px;
+      --transition:  0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+    }
+    body{font-family:'Inter',system-ui,sans-serif;background:var(--obsidian);color:var(--bone-white);line-height:1.6;overflow-x:hidden}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    :focus-visible{outline:2px solid var(--kcm-gold);outline-offset:3px;border-radius:var(--radius-sm)}
+    .font-cinzel{font-family:'Cinzel',serif}
+    .text-gold{color:var(--kcm-gold)}
+    .container{width:100%;max-width:1100px;margin-inline:auto;padding-inline:1.25rem}
+    .section{padding-block:5rem}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Inter',sans-serif;font-weight:600;font-size:1rem;padding:.875rem 2rem;border-radius:var(--radius-md);border:none;cursor:pointer;transition:transform var(--transition),box-shadow var(--transition),background var(--transition);white-space:nowrap;text-decoration:none}
+    .btn:hover{transform:translateY(-2px)}
+    .btn:active{transform:translateY(0)}
+    .btn-primary{background:linear-gradient(135deg,var(--kcm-gold) 0%,var(--gold-glow) 100%);color:var(--obsidian);box-shadow:0 4px 24px rgba(201,168,76,.35)}
+    .btn-primary:hover{box-shadow:0 8px 36px rgba(201,168,76,.55);background:linear-gradient(135deg,var(--gold-glow) 0%,#F5E6B8 100%)}
+    .btn-outline{background:transparent;color:var(--kcm-gold);border:1.5px solid var(--kcm-gold)}
+    .btn-outline:hover{background:rgba(201,168,76,.10);box-shadow:0 4px 20px rgba(201,168,76,.20)}
+    .btn-sm{font-size:.875rem;padding:.625rem 1.25rem}
+    #top-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,12,15,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--glass-border);padding-block:.75rem;transition:background var(--transition)}
+    .bar-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand-mark{display:flex;align-items:center;gap:.625rem;flex-shrink:0}
+    .monogram{width:36px;height:36px;flex-shrink:0}
+    .brand-name{font-family:'Cinzel',serif;font-weight:700;font-size:.95rem;color:var(--kcm-gold);line-height:1.2;letter-spacing:.03em}
+    .brand-tagline{font-size:.6rem;color:var(--smoke);letter-spacing:.12em;text-transform:uppercase;font-family:'Inter',sans-serif}
+    .bar-cta-group{display:flex;align-items:center;gap:.75rem}
+    .bar-pulse{width:8px;height:8px;background:#22C55E;border-radius:50%;animation:pulse 2s ease-in-out infinite;flex-shrink:0}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}50%{box-shadow:0 0 0 6px rgba(34,197,94,0)}}
+    .bar-live-text{font-size:.75rem;color:#22C55E;font-weight:500;white-space:nowrap}
+    #hero{position:relative;min-height:100svh;display:flex;align-items:center;padding-top:5rem;overflow:hidden}
+    .hero-bg-canvas{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.18}
+    .hero-vignette{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 70% 60% at 50% 45%,transparent 0%,var(--obsidian) 100%);pointer-events:none}
+    .hero-fade{position:absolute;bottom:0;left:0;right:0;height:120px;z-index:1;background:linear-gradient(to bottom,transparent,var(--obsidian));pointer-events:none}
+    .hero-content{position:relative;z-index:2;max-width:780px}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--kcm-gold);margin-bottom:1.25rem;padding:.375rem .875rem;border:1px solid var(--glass-border);border-radius:100px;background:rgba(201,168,76,.08)}
+    .hero-h1{font-family:'Cinzel',serif;font-size:clamp(2.2rem,5.5vw,4rem);font-weight:900;line-height:1.12;letter-spacing:-.01em;color:var(--bone-white);margin-bottom:1.25rem}
+    .hero-h1 .accent{background:linear-gradient(135deg,var(--kcm-gold),var(--gold-glow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-subhead{font-size:clamp(1rem,2.2vw,1.2rem);color:var(--bone-white);opacity:.85;max-width:560px;margin-bottom:2.25rem;line-height:1.7}
+    .hero-cta-group{display:flex;flex-direction:column;align-items:flex-start;gap:.875rem}
+    .hero-cta-btn{font-size:1.1rem;padding:1rem 2.25rem}
+    .hero-cta-support{font-size:.875rem;color:var(--smoke);display:flex;align-items:center;gap:.4rem}
+    .hero-cta-support::before{content:'checkmark';color:#22C55E;font-weight:700}
+    #proof-strip{padding-block:1.75rem;border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border);background:var(--deep-navy)}
+    .proof-grid{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap}
+    .proof-item{flex:1;min-width:160px;text-align:center;padding:1rem 1.5rem;position:relative}
+    .proof-item:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;height:60%;width:1px;background:var(--glass-border)}
+    .proof-label{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--smoke);margin-bottom:.375rem}
+    .proof-value{font-family:'Cinzel',serif;font-size:1.5rem;font-weight:700;color:var(--kcm-gold);line-height:1.2}
+    .proof-sub{font-size:.75rem;color:var(--smoke);margin-top:.2rem}
+    #how-it-works{background:var(--obsidian)}
+    .section-eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--kcm-gold);margin-bottom:.75rem;display:block}
+    .section-title{font-family:'Cinzel',serif;font-size:clamp(1.6rem,3.5vw,2.5rem);font-weight:700;color:var(--bone-white);line-height:1.2;margin-bottom:1rem}
+    .section-intro{font-size:1rem;color:var(--smoke);max-width:560px;line-height:1.7}
+    .steps-header{margin-bottom:3rem}
+    .steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;align-items:stretch}
+    .step-card{position:relative;background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-lg);padding:2rem 1.5rem 1.75rem;display:flex;flex-direction:column;gap:1rem;transition:transform var(--transition),box-shadow var(--transition);backdrop-filter:blur(8px)}
+    .step-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(201,168,76,.12)}
+    .step-card.step-final{background:linear-gradient(145deg,rgba(201,168,76,.15) 0%,rgba(232,201,107,.06) 100%);border-color:var(--kcm-gold);box-shadow:0 0 0 1px rgba(201,168,76,.20),0 8px 36px rgba(201,168,76,.18)}
+    .step-card.step-final:hover{box-shadow:0 0 0 1px rgba(201,168,76,.45),0 16px 52px rgba(201,168,76,.30)}
+    .step-number{font-family:'Cinzel',serif;font-size:.7rem;font-weight:700;letter-spacing:.1em;color:var(--smoke);text-transform:uppercase}
+    .step-card.step-final .step-number{color:var(--gold-glow)}
+    .step-icon{width:52px;height:52px;border-radius:var(--radius-md);background:rgba(201,168,76,.10);border:1px solid rgba(201,168,76,.20);display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+    .step-card.step-final .step-icon{background:rgba(201,168,76,.18);border-color:rgba(201,168,76,.45)}
+    .step-title{font-family:'Cinzel',serif;font-size:1.05rem;font-weight:700;color:var(--bone-white);line-height:1.3}
+    .step-card.step-final .step-title{color:var(--gold-glow)}
+    .step-desc{font-size:.875rem;color:var(--smoke);line-height:1.65;flex-grow:1}
+    .step-card.step-final .step-desc{color:var(--bone-white);opacity:.85}
+    .step-link{display:inline-flex;align-items:center;gap:.35rem;font-size:.85rem;font-weight:600;color:var(--kcm-gold);transition:gap var(--transition),color var(--transition)}
+    .step-link:hover{gap:.55rem;color:var(--gold-glow)}
+    .step-final-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--kcm-gold);background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.30);padding:.3rem .75rem;border-radius:100px;width:fit-content;animation:subtleglow 3s ease-in-out infinite}
+    @keyframes subtleglow{0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,0)}50%{box-shadow:0 0 12px 2px rgba(201,168,76,.25)}}
+    #secondary-links{background:var(--deep-navy)}
+    .link-cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2.5rem}
+    .link-card{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-md);padding:1.5rem;display:flex;flex-direction:column;gap:.75rem;transition:transform var(--transition),border-color var(--transition),box-shadow var(--transition);text-decoration:none;color:inherit}
+    .link-card:hover{transform:translateY(-3px);border-color:rgba(201,168,76,.50);box-shadow:0 8px 28px rgba(201,168,76,.10)}
+    .link-card-icon{font-size:1.75rem;line-height:1}
+    .link-card-title{font-family:'Cinzel',serif;font-size:.95rem;font-weight:700;color:var(--bone-white)}
+    .link-card-desc{font-size:.8rem;color:var(--smoke);line-height:1.55;flex-grow:1}
+    .link-card-arrow{font-size:.8rem;color:var(--kcm-gold);font-weight:600;display:flex;align-items:center;gap:.3rem;transition:gap var(--transition)}
+    .link-card:hover .link-card-arrow{gap:.5rem}
+    #closing-cta{background:var(--obsidian);position:relative;overflow:hidden}
+    #closing-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(201,168,76,.07) 0%,transparent 70%);pointer-events:none}
+    .closing-inner{position:relative;z-index:1;max-width:680px;margin-inline:auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:1.5rem}
+    .closing-title{font-family:'Cinzel',serif;font-size:clamp(1.75rem,4vw,3rem);font-weight:900;color:var(--bone-white);line-height:1.18}
+    .closing-body{font-size:1rem;color:var(--smoke);line-height:1.7;max-width:480px}
+    .closing-btn{font-size:1.15rem;padding:1.1rem 2.5rem}
+    .closing-support{font-size:.82rem;color:var(--smoke);display:flex;align-items:center;gap:.4rem}
+    .closing-support::before{content:'checkmark2';color:#22C55E;font-weight:700}
+    footer{background:#060709;border-top:1px solid rgba(255,255,255,.06);padding-block:2.5rem}
+    .footer-inner{display:flex;flex-direction:column;gap:1.25rem;align-items:center;text-align:center}
+    .footer-brand{font-family:'Cinzel',serif;font-size:.9rem;font-weight:700;color:var(--kcm-gold);letter-spacing:.05em}
+    .footer-tagline{font-size:.65rem;color:var(--smoke);letter-spacing:.12em;text-transform:uppercase}
+    .footer-disclaimer{font-size:.73rem;color:var(--smoke);max-width:700px;line-height:1.65}
+    .footer-disclaimer strong{color:rgba(242,237,228,.55)}
+    .footer-copy{font-size:.7rem;color:rgba(107,114,128,.6)}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .reveal-delay-1{transition-delay:.1s}
+    .reveal-delay-2{transition-delay:.2s}
+    .reveal-delay-3{transition-delay:.3s}
+    .icon-telegram{display:inline-block;width:20px;height:20px;vertical-align:middle;flex-shrink:0}
+    @media(max-width:600px){
+      .bar-live-text{display:none}
+      .bar-pulse{display:none}
+      .brand-name{font-size:.82rem}
+      .brand-tagline{display:none}
+      .hero-h1{font-size:2rem}
+      .proof-item:not(:last-child)::after{display:none}
+      .proof-grid{flex-direction:column;gap:0}
+      .proof-item{border-bottom:1px solid var(--glass-border)}
+      .proof-item:last-child{border-bottom:none}
+      .section{padding-block:3.5rem}
+    }
+    @media(max-width:480px){
+      .hero-cta-btn{width:100%;justify-content:center}
+    }
+  </style>
+</head>
+<body>
+
+<header id="top-bar" role="banner">
+  <div class="container bar-inner">
+    <a href="#hero" class="brand-mark" aria-label="Khan Capital Management - go to top">
+      <svg class="monogram" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="18" cy="18" r="17" stroke="#C9A84C" stroke-width="1.4" fill="rgba(10,12,15,0.85)"/>
+        <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Cinzel,serif" font-size="11" font-weight="700" fill="#C9A84C">KCM</text>
+      </svg>
+      <div>
+        <div class="brand-name">Khan Capital Management</div>
+        <div class="brand-tagline">Investment &middot; Wealth &middot; Advisory</div>
+      </div>
+    </a>
+    <div class="bar-cta-group">
+      <div class="bar-pulse" aria-hidden="true"></div>
+      <span class="bar-live-text">Live daily signals</span>
+      <a href="https://t.me/+uRjbW3eTxog1NGY0" target="_blank" rel="noopener" class="btn btn-primary btn-sm" id="topbar-telegram-cta" aria-label="Join KCM Telegram group - opens in new tab">
+        <svg class="icon-telegram" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.829.941z"/></svg>
+        Join Telegram
+      </a>
+    </div>
+  </div>
+</header>
+
+<section id="hero" aria-labelledby="hero-heading">
+  <svg class="hero-bg-canvas" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <line x1="0" y1="100" x2="1200" y2="100" stroke="#C9A84C" stroke-width="0.4" stroke-dasharray="4 8"/>
+    <line x1="0" y1="200" x2="1200" y2="200" stroke="#C9A84C" stroke-width="0.4" stroke-dasharray="4 8"/>
+    <line x1="0" y1="300" x2="1200" y2="300" stroke="#C9A84C" stroke-width="0.4" stroke-dasharray="4 8"/>
+    <line x1="0" y1="400" x2="1200" y2="400" stroke="#C9A84C" stroke-width="0.4" stroke-dasharray="4 8"/>
+    <line x1="100" y1="380" x2="100" y2="310" stroke="#C9A84C" stroke-width="1.2"/>
+    <rect x="93" y="330" width="14" height="40" fill="#C9A84C" rx="1"/>
+    <line x1="160" y1="370" x2="160" y2="290" stroke="#C9A84C" stroke-width="1.2"/>
+    <rect x="153" y="305" width="14" height="50" fill="#C9A84C" rx="1"/>
+    <line x1="220" y1="320" x2="220" y2="260" stroke="#6B7280" stroke-width="1.2"/>
+    <rect x="213" y="265" width="14" height="38" fill="#6B7280" rx="1"/>
+    <line x1="280" y1="295" x2="280" y2="225" stroke="#C9A84C" stroke-width="1.2"/>
+    <rect x="273" y="240" width="14" height="42" fill="#C9A84C" rx="1"/>
+    <line x1="340" y1="260" x2="340" y2="195" stroke="#C9A84C" stroke-width="1.2"/>
+    <rect x="333" y="205" width="14" height="38" fill="#C9A84C" rx="1"/>
+    <line x1="400" y1="250" x2="400" y2="195" stroke="#6B7280" stroke-width="1.2"/>
+    <rect x="393" y="200" width="14" height="32" fill="#6B7280" rx="1"/>
+    <line x1="460" y1="230" x2="460" y2="165" stroke="#C9A84C" stroke-width="1.2"/>
+    <rect x="453" y="175" width="14" height="40" fill="#C9A84C" rx="1"/>
+    <line x1="520" y1="210" x2="520" y2="148" stroke="#C9A84C" stroke-width="1.2"/>
+    <rect x="513" y="158" width="14" height="36" fill="#C9A84C" rx="1"/>
+    <line x1="580" y1="210" x2="580" y2="158" stroke="#6B7280" stroke-width="1.2"/>
+    <rect x="573" y="165" width="14" height="28" fill="#6B7280" rx="1"/>
+    <line x1="640" y1="190" x2="640" y2="128" stroke="#C9A84C" stroke-width="1.2"/>
+    <rect x="633" y="138" width="14" height="38" fill="#C9A84C" rx="1"/>
+    <line x1="700" y1="175" x2="700" y2="108" stroke="#C9A84C" stroke-width="1.2"/>
+    <rect x="693" y="118" width="14" height="42" fill="#C9A84C" rx="1"/>
+    <line x1="760" y1="170" x2="760" y2="118" stroke="#6B7280" stroke-width="1.2"/>
+    <rect x="753" y="124" width="14" height="30" fill="#6B7280" rx="1"/>
+    <line x1="820" y1="155" x2="820" y2="90" stroke="#C9A84C" stroke-width="1.2"/>
+    <rect x="813" y="100" width="14" height="40" fill="#C9A84C" rx="1"/>
+    <line x1="880" y1="148" x2="880" y2="82" stroke="#C9A84C" stroke-width="1.2"/>
+    <rect x="873" y="92" width="14" height="38" fill="#C9A84C" rx="1"/>
+    <polyline points="100,370 160,350 220,295 280,275 340,230 400,220 460,200 520,182 580,185 640,162 700,142 760,148 820,125 880,110 960,95 1100,78" stroke="#E8C96B" stroke-width="1.5" fill="none" stroke-dasharray="8 4" opacity="0.7">
+      <animate attributeName="stroke-dashoffset" from="0" to="-200" dur="6s" repeatCount="indefinite"/>
+    </polyline>
+  </svg>
+  <div class="hero-vignette" aria-hidden="true"></div>
+  <div class="hero-fade" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="bar-pulse" style="width:6px;height:6px;" aria-hidden="true"></div>
+        Khan Capital Management &mdash; Live Trading Community
+      </div>
+      <h1 class="hero-h1" id="hero-heading">
+        Trade Smarter.<br/>
+        <span class="accent">Learn from Real Entries.</span>
+      </h1>
+      <p class="hero-subhead">
+        Get access to live Quotex trade entries, step-by-step strategy breakdowns,
+        and direct support from the KCM team &mdash; all inside our Telegram community.
+      </p>
+      <div class="hero-cta-group">
+        <a href="https://t.me/+uRjbW3eTxog1NGY0" target="_blank" rel="noopener" class="btn btn-primary hero-cta-btn" id="hero-telegram-cta" aria-label="Join the KCM Telegram trading community - opens in new tab">
+          <svg class="icon-telegram" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.829.941z"/></svg>
+          Join Telegram Now
+        </a>
+        <span class="hero-cta-support">&#10003; Free to join &nbsp;&middot;&nbsp; Live entries posted daily</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proof-strip" aria-label="Why KCM">
+  <div class="container">
+    <div class="proof-grid">
+      <div class="proof-item reveal">
+        <div class="proof-label">What you get</div>
+        <div class="proof-value font-cinzel">Live Entries</div>
+        <div class="proof-sub">Posted in real time, every trading day</div>
+      </div>
+      <div class="proof-item reveal reveal-delay-1">
+        <div class="proof-label">Strategy depth</div>
+        <div class="proof-value font-cinzel">Full Breakdowns</div>
+        <div class="proof-sub">Indicator walkthroughs, not just signals</div>
+      </div>
+      <div class="proof-item reveal reveal-delay-2">
+        <div class="proof-label">Access</div>
+        <div class="proof-value font-cinzel">Direct to Team</div>
+        <div class="proof-sub">Ask questions, get answers from KCM</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works" class="section" aria-labelledby="hiw-heading">
+  <div class="container">
+    <div class="steps-header">
+      <span class="section-eyebrow">Your path to the community</span>
+      <h2 class="section-title" id="hiw-heading">How It Works</h2>
+      <p class="section-intro">Follow these four steps in order &mdash; each one sets you up for the next. The final step is where the real trading happens.</p>
+    </div>
+    <div class="steps-grid">
+      <article class="step-card reveal" aria-label="Step 1: Create your Quotex account">
+        <div class="step-number">Step 01</div>
+        <div class="step-icon" aria-hidden="true">&#x1F4CA;</div>
+        <h3 class="step-title">Create Your<br/>Quotex Account</h3>
+        <p class="step-desc">Start with a free demo account on Quotex &mdash; no real money required to begin. Practice the platform before you ever risk a cent.</p>
+        <a href="https://broker-qx.pro/sign-up/?lid=1303490" target="_blank" rel="noopener" class="step-link" id="step1-quotex-link" aria-label="Create your Quotex account - opens in new tab">Create Account &rarr;</a>
+      </article>
+      <article class="step-card reveal reveal-delay-1" aria-label="Step 2: Visit the KCM website">
+        <div class="step-number">Step 02</div>
+        <div class="step-icon" aria-hidden="true">&#x1F310;</div>
+        <h3 class="step-title">Visit the<br/>KCM Website</h3>
+        <p class="step-desc">Access trading tools, resources, and exclusive educational material curated by the KCM team to support your progress.</p>
+        <a href="https://lsakcm.com/" target="_blank" rel="noopener" class="step-link" id="step2-website-link" aria-label="Visit KCM website - opens in new tab">Explore Resources &rarr;</a>
+      </article>
+      <article class="step-card reveal reveal-delay-2" aria-label="Step 3: Watch strategy tutorials">
+        <div class="step-number">Step 03</div>
+        <div class="step-icon" aria-hidden="true">&#x25B6;&#xFE0F;</div>
+        <h3 class="step-title">Watch Strategy<br/>Tutorials</h3>
+        <p class="step-desc">Work through KCM's free YouTube tutorials: indicator setups, entry logic, and platform walkthroughs explained step by step.</p>
+        <a href="https://www.youtube.com/@KhanCapitalManagement" target="_blank" rel="noopener" class="step-link" id="step3-youtube-link" aria-label="Watch KCM strategy tutorials on YouTube - opens in new tab">Watch Tutorials &rarr;</a>
+      </article>
+      <article class="step-card step-final reveal reveal-delay-3" aria-label="Step 4: Join the KCM Telegram live trading group">
+        <div class="step-number">Step 04 &mdash; Final Step</div>
+        <div class="step-final-badge">
+          <div class="bar-pulse" style="width:6px;height:6px;" aria-hidden="true"></div>
+          Live now
+        </div>
+        <div class="step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#C9A84C" width="28" height="28" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.829.941z"/></svg>
+        </div>
+        <h3 class="step-title">Trade Live<br/>With Us</h3>
+        <p class="step-desc">Once you know the platform and the strategy, step into the live community. Get real-time entries, ask questions, and trade alongside the KCM team every day.</p>
+        <a href="https://t.me/+uRjbW3eTxog1NGY0" target="_blank" rel="noopener" class="btn btn-primary" id="step4-telegram-btn" aria-label="Join KCM Telegram live trading group - opens in new tab">
+          <svg class="icon-telegram" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.829.941z"/></svg>
+          Join Telegram Now
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="secondary-links" class="section" aria-labelledby="secondary-heading">
+  <div class="container">
+    <span class="section-eyebrow">More ways to connect</span>
+    <h2 class="section-title" id="secondary-heading">Find Us Everywhere</h2>
+    <p class="section-intro">Whether you prefer short-form content, a different messaging platform, or just want to explore before committing &mdash; we are here.</p>
+    <div class="link-cards-grid">
+      <a href="https://chat.whatsapp.com/BMQwNydJk545SG7zLSsw7T" target="_blank" rel="noopener" class="link-card reveal" id="whatsapp-link-card" aria-label="Join KCM WhatsApp community - opens in new tab">
+        <div class="link-card-icon" aria-hidden="true">&#x1F4AC;</div>
+        <div class="link-card-title">WhatsApp Community</div>
+        <p class="link-card-desc">For members who prefer WhatsApp over Telegram &mdash; same community, different channel.</p>
+        <div class="link-card-arrow">Join Community &rarr;</div>
+      </a>
+      <a href="https://www.tiktok.com/@kcm653" target="_blank" rel="noopener" class="link-card reveal reveal-delay-1" id="tiktok-link-card" aria-label="Follow KCM on TikTok - opens in new tab">
+        <div class="link-card-icon" aria-hidden="true">&#x1F3B5;</div>
+        <div class="link-card-title">TikTok</div>
+        <p class="link-card-desc">Short-form market insights and platform demos. Great entry point if you are just getting started.</p>
+        <div class="link-card-arrow">Follow on TikTok &rarr;</div>
+      </a>
+      <a href="https://www.youtube.com/@KhanCapitalManagement" target="_blank" rel="noopener" class="link-card reveal reveal-delay-2" id="secondary-youtube-link" aria-label="Watch KCM YouTube channel - opens in new tab">
+        <div class="link-card-icon" aria-hidden="true">&#x25B6;&#xFE0F;</div>
+        <div class="link-card-title">YouTube Channel</div>
+        <p class="link-card-desc">Free strategy tutorials, indicator walkthroughs, and Quotex platform guides &mdash; all on demand.</p>
+        <div class="link-card-arrow">Watch Tutorials &rarr;</div>
+      </a>
+      <a href="https://lsakcm.com/" target="_blank" rel="noopener" class="link-card reveal reveal-delay-3" id="secondary-website-link" aria-label="Visit KCM website for tools and resources - opens in new tab">
+        <div class="link-card-icon" aria-hidden="true">&#x1F310;</div>
+        <div class="link-card-title">KCM Website</div>
+        <p class="link-card-desc">Trading tools, resources, and educational content from the KCM team.</p>
+        <div class="link-card-arrow">Visit Website &rarr;</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="closing-cta" class="section" aria-labelledby="closing-heading">
+  <div class="container">
+    <div class="closing-inner">
+      <div class="hero-eyebrow">
+        <div class="bar-pulse" style="width:6px;height:6px;" aria-hidden="true"></div>
+        Ready when you are
+      </div>
+      <h2 class="closing-title" id="closing-heading">
+        Join the Community.<br/>
+        <span style="background:linear-gradient(135deg,var(--kcm-gold),var(--gold-glow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Trade Live Today.</span>
+      </h2>
+      <p class="closing-body">Every day the market opens, KCM is in the Telegram group &mdash; posting entries, walking through the logic, and answering questions. It is free to join. There is no reason to wait.</p>
+      <a href="https://t.me/+uRjbW3eTxog1NGY0" target="_blank" rel="noopener" class="btn btn-primary closing-btn" id="closing-telegram-cta" aria-label="Join KCM Telegram trading community - opens in new tab">
+        <svg class="icon-telegram" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.829.941z"/></svg>
+        Join Telegram Now &mdash; It Is Free
+      </a>
+      <span class="closing-support">&#10003; No registration required &nbsp;&middot;&nbsp; No credit card &nbsp;&middot;&nbsp; Live entries daily</span>
+    </div>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="container footer-inner">
+    <div>
+      <div class="footer-brand">Khan Capital Management</div>
+      <div class="footer-tagline">Investment &middot; Wealth &middot; Advisory</div>
+    </div>
+    <p class="footer-disclaimer">
+      <strong>Risk Disclaimer:</strong> Trading binary options and CFDs carries a high level of risk and may not be suitable for all investors. You could lose some or all of your invested capital, and you should never trade money that you cannot afford to lose. Past performance and signal results do not guarantee future outcomes. The information provided by KCM is for educational purposes only and does not constitute financial or investment advice. Always conduct your own due diligence before making any financial decisions.
+    </p>
+    <div class="footer-copy">&copy; <span id="footer-year"></span> Khan Capital Management. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReducedMotion) {
+    var revealEls = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function(el) { observer.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
+  }
+  var topBar = document.getElementById('top-bar');
+  window.addEventListener('scroll', function() {
+    topBar.style.background = window.scrollY > 40 ? 'rgba(10,12,15,0.97)' : 'rgba(10,12,15,0.92)';
+  }, { passive: true });
+</script>
+</body>
+</html>
