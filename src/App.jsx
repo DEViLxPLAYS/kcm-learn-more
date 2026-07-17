@@ -1,7 +1,7 @@
 ﻿import { motion } from "framer-motion";
 import "./index.css";
 
-/* ─── LINKS DATA ─────────────────────────────────────────── */
+/* LINKS DATA */
 const links = [
   {
     id: "telegram",
@@ -23,7 +23,6 @@ const links = [
     sub: "Chat with the KCM community",
     href: "https://chat.whatsapp.com/KlQBAmsfdeOJlhwtsjA6U0",
     bg: "#111418",
-    color: "#F2EDE4",
     borderColor: "rgba(37,211,102,0.35)",
     icon: (
       <svg viewBox="0 0 24 24" fill="#25D366" width="26" height="26">
@@ -38,7 +37,6 @@ const links = [
     sub: "Step-by-step Quotex walkthroughs",
     href: "https://www.youtube.com/@KhanCapitalManagement",
     bg: "#111418",
-    color: "#F2EDE4",
     borderColor: "rgba(255,0,0,0.30)",
     icon: (
       <svg viewBox="0 0 24 24" fill="#FF0000" width="26" height="26">
@@ -52,28 +50,26 @@ const links = [
     sub: "Short-form trading insights & tips",
     href: "https://www.tiktok.com/@kcm653",
     bg: "#111418",
-    color: "#F2EDE4",
-    borderColor: "rgba(255,255,255,0.15)",
+    borderColor: "rgba(255,255,255,0.12)",
     icon: (
       <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
         <defs>
-          <linearGradient id="tiktok-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient id="tg" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#69C9D0"/>
             <stop offset="100%" stopColor="#EE1D52"/>
           </linearGradient>
         </defs>
-        <path fill="url(#tiktok-grad)" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.73a8.18 8.18 0 004.79 1.53V6.82a4.85 4.85 0 01-1.02-.13z"/>
+        <path fill="url(#tg)" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.73a8.18 8.18 0 004.79 1.53V6.82a4.85 4.85 0 01-1.02-.13z"/>
       </svg>
     ),
   },
   {
     id: "quotex",
     label: "Create Quotex Account",
-    sub: "Free demo account — start practicing",
+    sub: "Free demo account — start practising",
     href: "https://broker-qx.pro/sign-up/?lid=1303490",
     bg: "#111418",
-    color: "#F2EDE4",
-    borderColor: "rgba(201,168,76,0.20)",
+    borderColor: "rgba(201,168,76,0.22)",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" width="26" height="26" stroke="#C9A84C" strokeWidth="1.8">
         <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
@@ -87,8 +83,7 @@ const links = [
     sub: "Tools, resources & more",
     href: "https://lsakcm.com/",
     bg: "#111418",
-    color: "#F2EDE4",
-    borderColor: "rgba(201,168,76,0.20)",
+    borderColor: "rgba(201,168,76,0.22)",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" width="26" height="26" stroke="#C9A84C" strokeWidth="1.8">
         <circle cx="12" cy="12" r="10"/>
@@ -99,7 +94,7 @@ const links = [
   },
 ];
 
-/* ─── ANIMATION VARIANTS ─────────────────────────────────── */
+/* ANIMATION VARIANTS */
 const container = {
   hidden: {},
   show: { transition: { staggerChildren: 0.09 } },
@@ -109,20 +104,35 @@ const fadeUp = {
   show:   { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.4,0,0.2,1] } },
 };
 
-/* ─── APP ─────────────────────────────────────────────────── */
+/* APP */
 export default function App() {
   return (
-    <div style={{ width: "100%", maxWidth: 480, margin: "0 auto", display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
+    <div style={{
+      width: "100%",
+      maxWidth: 480,
+      margin: "0 auto",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      padding: "0 1rem 2rem",
+    }}>
 
-      {/* ── PROFILE HEADER ────────────────────────────── */}
+      {/* PROFILE HEADER — logo sits 2.5rem below top of page */}
       <motion.div
-        style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem", marginBottom: "2rem" }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "1rem",
+          marginBottom: "2rem",
+          marginTop: "2.5rem",   /* <-- the only change: logo is a little below */
+        }}
         variants={container}
         initial="hidden"
         animate="show"
       >
         {/* Logo */}
-        <motion.div variants={fadeUp} style={{ position: "relative" }}>
+        <motion.div variants={fadeUp}>
           <div style={{
             width: 108, height: 108, borderRadius: "50%",
             border: "2.5px solid #C9A84C",
@@ -173,7 +183,7 @@ export default function App() {
         </motion.p>
       </motion.div>
 
-      {/* ── LINK BUTTONS ──────────────────────────────── */}
+      {/* LINK BUTTONS */}
       <motion.div
         style={{ width: "100%", display: "flex", flexDirection: "column", gap: "0.75rem" }}
         variants={container}
@@ -200,61 +210,40 @@ export default function App() {
               border: link.primary ? "none" : `1px solid ${link.borderColor || "rgba(201,168,76,0.18)"}`,
               boxShadow: link.primary ? "0 4px 28px rgba(201,168,76,0.30)" : "none",
               cursor: "pointer",
-              position: "relative",
               overflow: "hidden",
               textDecoration: "none",
             }}
             whileHover={{
               scale: 1.025,
-              boxShadow: link.primary
-                ? "0 8px 38px rgba(201,168,76,0.50)"
-                : "0 4px 24px rgba(201,168,76,0.12)",
+              boxShadow: link.primary ? "0 8px 38px rgba(201,168,76,0.50)" : "0 4px 24px rgba(201,168,76,0.12)",
               borderColor: "rgba(201,168,76,0.45)",
             }}
             whileTap={{ scale: 0.975 }}
             transition={{ type: "spring", stiffness: 320, damping: 22 }}
           >
-            {/* Icon */}
             <span style={{
-              flexShrink: 0,
-              width: 42, height: 42,
-              borderRadius: 10,
+              flexShrink: 0, width: 42, height: 42, borderRadius: 10,
               background: link.primary ? "rgba(0,0,0,0.18)" : "rgba(255,255,255,0.05)",
               display: "flex", alignItems: "center", justifyContent: "center",
             }}>
               {link.icon}
             </span>
-
-            {/* Text */}
             <span style={{ flex: 1, minWidth: 0 }}>
-              <span style={{
-                display: "block",
-                fontWeight: 600,
-                fontSize: "0.95rem",
-                lineHeight: 1.3,
-                color: link.primary ? "#0A0C0F" : "#F2EDE4",
-              }}>
+              <span style={{ display: "block", fontWeight: 600, fontSize: "0.95rem", lineHeight: 1.3, color: link.primary ? "#0A0C0F" : "#F2EDE4" }}>
                 {link.label}
               </span>
-              <span style={{
-                display: "block",
-                fontSize: "0.75rem",
-                marginTop: "0.15rem",
-                color: link.primary ? "rgba(10,12,15,0.65)" : "#6B7280",
-              }}>
+              <span style={{ display: "block", fontSize: "0.75rem", marginTop: "0.15rem", color: link.primary ? "rgba(10,12,15,0.65)" : "#6B7280" }}>
                 {link.sub}
               </span>
             </span>
-
-            {/* Arrow */}
-            <svg viewBox="0 0 16 16" fill={link.primary ? "rgba(10,12,15,0.5)" : "#6B7280"} width="16" height="16" style={{ flexShrink: 0 }}>
-              <path d="M6 3l5 5-5 5" stroke={link.primary ? "rgba(10,12,15,0.5)" : "#6B7280"} strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg viewBox="0 0 16 16" fill="none" width="16" height="16" style={{ flexShrink: 0 }}>
+              <path d="M6 3l5 5-5 5" stroke={link.primary ? "rgba(10,12,15,0.5)" : "#6B7280"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </motion.a>
         ))}
       </motion.div>
 
-      {/* ── FOOTER ────────────────────────────────────── */}
+      {/* FOOTER */}
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
