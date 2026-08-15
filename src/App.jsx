@@ -7,7 +7,7 @@ const links = [
     id: "telegram",
     label: "Join Our Telegram",
     sub: "Live trade entries & signals daily",
-    href: "https://t.me/+8vKIGOBHgNwxNmI0",
+    href: "https://t.me/+SPcnOSeOzLxmODFk",
     bg: "linear-gradient(135deg,#C9A84C,#E8C96B)",
     color: "#0A0C0F",
     icon: (
@@ -21,7 +21,7 @@ const links = [
     id: "whatsapp",
     label: "WhatsApp Community",
     sub: "Chat with the KCM community",
-    href: "https://chat.whatsapp.com/CMuG7cE4opR9qIRrBPHNlN",
+    href: "https://chat.whatsapp.com/ErJfr79ExnQDwHSaVbX4jm",
     bg: "#111418",
     borderColor: "rgba(37,211,102,0.35)",
     icon: (
